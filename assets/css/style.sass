@@ -1,0 +1,323 @@
+$soft_red: #fe7867
+$yellow: #fad400
+$dark_desaturated_cyan: #25564b //graphic design text
+$dark_blue: #19536b // photography text
+$dark_moderate_cyan: #458c7e //footer
+$very_dark_desaturated_blue: #252f3b
+$very_dark_grayish_blue: #888892
+$dark_grayish_blue: #b2b1b0
+$grayish_blue: #a7abae
+$white: #ffffff
+$font_size: 18px
+$font_family_primary: 'Barlow', sans-serif
+$font_family_secondary: 'Fraunces', serif
+$padding: 40px
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  outline: 0
+
+  &::after, &::before
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+    outline: 0
+
+html,
+body
+  height: 100%
+  background: $white
+  text-align: center
+  font-family: $font_family_primary
+  font-size: $font_size
+  line-height: 24px
+  color: $dark_grayish_blue
+
+#toggle-nav
+  display: none
+
+  + label
+    display: block
+    width: 30px
+    height: 30px
+    z-index: 1
+    cursor: pointer
+    grid-area: c-toggle
+
+  &:checked
+    + label
+      + .main-nav
+        display: flex
+        gap: 20px
+        flex-direction: column
+        width: 100%
+        height: 100%
+        background: $white
+        text-align: center
+        padding: 40px
+        animation: slideBottom 1s ease 0s 1 normal forwards
+
+.content
+  height: 100%
+  display: grid
+  grid-template-areas: "c-head" "c-main" "c-footer"
+  grid-template-rows: auto 1fr auto
+  grid-template-columns: 1fr
+
+p
+  line-height: 25px
+  font-size: 16px
+
+img
+  max-width: 100%
+
+.main
+  &-content
+    margin: 0 auto
+    grid-area: c-main
+
+  &-header
+    grid-area: c-head
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(3, auto)
+
+    .logo
+      grid-area: c-logo
+
+  &-menu
+    grid-column: 1
+    grid-row: 1/2
+    z-index: 3
+    padding: 20px
+    text-align: left
+
+    display: grid
+    row-gap: 26px
+    justify-content: space-between
+    align-items: center
+    justify-content: space-between
+    align-items: center
+    grid-template-areas: "c-logo c-toggle" "c-menu c-menu"
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr auto
+    gap: 45px
+    
+  &-nav
+    display: none
+    grid-area: c-menu
+    position: relative
+
+    &::before
+      content: ""
+      position: absolute
+      display: block
+      width: 30px
+      height: 30px
+      right: 0
+      top: -30px
+      border-top: 0
+      border-left: 30px solid transparent
+      border-right: 0
+      border-bottom: 30px solid transparent
+      border-bottom-color: $white
+    
+    a
+      color: $very_dark_grayish_blue
+
+  &-footer
+    grid-area: c-footer
+    background-color: #90d4c5
+    display: grid
+    grid-template-areas: "c-logo" "c-nav" "c-social"
+    grid-template-rows: auto auto 1fr
+    padding: 40px 20px 60px
+
+    .logo
+      grid-area: c-logo
+      display: block
+      margin: 0 auto
+      padding: 30px
+
+      img
+        filter: brightness(0) saturate(80%) invert(26%) sepia(44%) saturate(292%) hue-rotate(116deg) brightness(154%) contrast(160%)
+
+.hero
+  grid-column: 1
+  grid-row: 1/4
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: repeat(3, 1fr)
+
+  h1
+    grid-column: 1
+    grid-row: 2/3
+    z-index: 1
+    color: white
+    font-size: 43px
+    line-height: 50px
+    text-transform: uppercase
+    font-weight: 700
+    font-family: $font_family_secondary
+    letter-spacing: 1px
+    white-space: pre-line
+
+  .banner
+    grid-column: 1
+    grid-row: 1/4
+
+    img
+      height: 100%
+      object-fit: cover
+
+.cta-text-box
+  .text
+    padding: 50px 30px
+
+    h2
+      margin-bottom: 20px
+      color: $very_dark_desaturated_blue
+      font-family: $font_family_secondary
+      font-weight: 900
+
+a
+  text-decoration: none
+
+  &.cta
+    &-link
+      color: $very_dark_desaturated_blue
+      font-family: $font_family_secondary
+      font-weight: 900
+      text-transform: uppercase
+      display: block
+      margin-top: 20px
+
+    &-contact
+      background: #fad400
+      width: 124px
+      display: block
+      margin: 0 auto
+      padding: 10px
+      border-radius: 24px
+      color: $very_dark_desaturated_blue 
+      font-family: $font_family_secondary
+      font-style: normal
+      font-weight: 900
+      text-transform: uppercase 
+      font-size: 14px
+      margin-top: 10px
+
+.banner
+  &-text-box
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(3, 1fr)
+
+    .banner
+      grid-column: 1/1
+      grid-row: 1/4
+
+      img
+        height: 100%
+        object-fit: cover
+
+    .text
+      grid-column: 1/1
+      grid-row: 3/4
+      padding: 0 20px
+
+    h2
+      font-family: $font_family_secondary
+      font-weight: 900
+      margin-bottom: 20px
+
+  &-green
+    color: $dark_desaturated_cyan
+
+  &-blue
+    color: $dark_blue
+
+.testimonial
+  &-container
+    padding: 40px
+    display: grid
+    gap: 51px
+
+    h2
+      font-family: $font_family_secondary
+      letter-spacing: 3px
+      text-transform: uppercase
+      color: $grayish_blue
+      font-size: 16px
+
+  &-item
+    display: block
+    border-radius: 50%
+    margin: 0 auto 30px
+
+    .avatar
+      img
+        display: block
+        border-radius: 50%
+        margin: 0 auto 30px
+
+    .description
+      color: #666769
+
+    .title
+      display: block
+      font-family: $font_family_secondary
+      font-weight: 900
+      margin-top: 20px
+      margin-bottom: 5px
+      color: $very_dark_desaturated_blue
+
+    .subtitle
+      font-size: 12px
+      line-height: 18px
+
+.gallery
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: 1fr 1fr
+
+  img
+    height: 100%
+    object-fit: cover
+
+.footer-nav
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  justify-content: space-evenly
+  align-items: center
+  grid-area: c-nav
+  padding: 0 0 95px
+
+  a
+    color: #4b8f80
+
+.social
+  &-links
+    display: flex
+    flex-wrap: wrap
+    gap: 10px
+    justify-content: space-evenly
+    align-items: center
+    grid-area: c-social
+    padding: 0 80px
+    
+  &-item
+    color: $dark_desaturated_cyan
+
+@keyframes slideBottom
+  0%
+    opacity: .5
+    transform: translateY(-20px)
+
+  100%
+    opacity: 1
+    transform: translateY(0)
+    
