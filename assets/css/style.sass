@@ -557,11 +557,15 @@ a
         font-size: 18px
         line-height: 33px
 
+        max-width: 70%
+        margin: 0 auto
+
     &-grid
       display: grid
       grid-row: 1fr
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
-      gap: 30px
+      column-gap: 30px
+      row-gap: 67px
       padding: 18px
 
     &-item
@@ -637,6 +641,9 @@ a
 
     &-container
       padding-bottom: 146px
+
+      .description
+        max-width: 100%
 
   .gallery
     padding-top: 0
