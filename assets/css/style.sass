@@ -261,6 +261,7 @@ a
       text-transform: uppercase 
       font-size: 15px
       line-height: 37px
+      text-align: center
 
       &:hover
         background-color: lighten($yellow, 10%)
@@ -354,7 +355,6 @@ a
 .footer-nav
   display: flex
   flex-wrap: wrap
-  gap: 10px
   justify-content: space-around
   align-items: center
   grid-area: c-nav
@@ -391,4 +391,115 @@ a
   100%
     opacity: 1
     transform: translateY(2px)
-    
+
+@media screen and ( min-width: 998px)
+  #toggle-nav
+    + label
+      display: none
+
+  .main
+    &-footer
+      padding-bottom: 56px
+
+    &-nav
+      display: flex
+      justify-content: end
+      gap: 50px
+      align-items: center
+
+      &:before
+        display: none
+
+    &-menu
+      grid-template-areas: "c-logo c-menu"
+      grid-template-rows: 1fr
+      grid-template-columns: auto 1fr
+
+      a
+        color: $white
+
+        &:hover
+          color: $white
+          opacity: .7
+          transition: opacity .5
+
+  a
+    &.cta
+      &-link
+        &::after
+          width: 122px
+          margin: -7px 0 0
+
+      &-contact
+        margin: 0
+        background-color: $white
+        color: $very_dark_desaturated_blue
+
+        &:hover
+          background-color: #6bd1ff
+          opacity: 1
+          transition: all .5s
+
+  p
+    white-space: pre-line
+
+  .cta
+    &-text-box
+      display: grid
+      grid-template-columns: 1fr 1fr
+      grid-template-rows: 1fr
+      align-items: center
+
+      .banner
+        grid-area: c-banner
+
+        img
+          display: block
+
+      .text
+        grid-area: c-text
+        text-align: left
+        padding: 50px 101px 66px
+
+      &:first-of-type
+        grid-template-areas: "c-text c-banner"
+        
+      &:nth-of-type(2)
+        grid-template-areas: "c-banner c-text"
+
+  .banner
+    &-text
+      &-container
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: 1fr
+        align-items: center
+
+      &-box
+        .text
+          padding: 0 150px
+
+  .testimonial
+    &-container
+      max-width: 1220px
+      margin: 0 auto
+
+    &-grid
+      display: grid
+      grid-row: 1fr
+      grid-template-columns: repeat(3, 1fr)
+      gap: 40px
+  
+  .gallery
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    grid-template-rows: 1fr
+
+  .footer-nav
+    justify-content: center
+    gap: 45px
+    padding: 7px 0 21px
+
+  .social
+    &-links
+      justify-content: center
+      gap: 20px
