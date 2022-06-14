@@ -46,6 +46,12 @@ body
     cursor: pointer
     grid-area: c-toggle
 
+    &:hover
+      opacity: .6
+
+    &:active
+      opacity: .8
+
   &:checked
     + label
       + .main-nav
@@ -130,6 +136,9 @@ img
       font-size: 19px
       line-height: 27px
 
+      &:hover
+        color: darken($very_dark_grayish_blue, 30%)
+
   &-footer
     grid-area: c-footer
     background-color: #90d4c5
@@ -147,6 +156,11 @@ img
       img
         filter: brightness(0) saturate(80%) invert(26%) sepia(44%) saturate(292%) hue-rotate(116deg) brightness(154%) contrast(160%)
         display: block
+
+    a
+      &:hover
+        color: $white
+        transition: color .5s
 
 .hero
   grid-column: 1
@@ -197,6 +211,15 @@ img
       padding-top: 8px
       line-height: 38px
 
+  &:first-child
+    .cta-link
+      &::after
+        background-color: #fdf1b7
+
+      &:hover
+        &::after
+          background-color: $yellow
+
 a
   text-decoration: none
 
@@ -210,14 +233,27 @@ a
       margin-top: 40px
       font-size: 16px
 
+      &::after
+        content: ''
+        display: block
+        height: 6px
+        width: 40%
+        margin: -7px auto 0
+        border-radius: 6px
+        background-color: #fedad4
+
+      &:hover
+        &::after
+          background-color: $soft_red
+
     &-contact
-      background: #fad400
+      background-color: #fad400
       width: 140px
       height: 57px
       display: block
       margin: 0 auto
       padding: 10px
-      border-radius: 24px
+      border-radius: 31px
       color: $very_dark_desaturated_blue 
       font-family: $font_family_secondary
       font-style: normal
@@ -225,6 +261,9 @@ a
       text-transform: uppercase 
       font-size: 15px
       line-height: 37px
+
+      &:hover
+        background-color: lighten($yellow, 10%)
 
 .banner
   &-text-box
@@ -338,6 +377,11 @@ a
     
   &-item
     color: $dark_desaturated_cyan
+
+    &:hover
+      img
+        filter: brightness(100)
+        transition: all 1s
 
 @keyframes slideBottom
   0%
