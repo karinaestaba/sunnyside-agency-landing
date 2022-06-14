@@ -84,6 +84,7 @@ img
   &-content
     margin: 0 auto
     grid-area: c-main
+    width: 100%
 
   &-header
     grid-area: c-head
@@ -192,6 +193,7 @@ img
     img
       height: 100%
       object-fit: cover
+      width: 100%
   
   .icon
     grid-column: 1
@@ -237,7 +239,7 @@ a
         content: ''
         display: block
         height: 6px
-        width: 40%
+        width: 122px
         margin: -7px auto 0
         border-radius: 6px
         background-color: #fedad4
@@ -279,6 +281,7 @@ a
       img
         height: 100%
         object-fit: cover
+        width: 100%
 
     .text
       grid-column: 1/1
@@ -299,7 +302,7 @@ a
 
 .testimonial
   &-container
-    padding: 52px 40px 40px
+    padding: 52px 40px 0
     display: grid
     gap: 51px
 
@@ -318,7 +321,7 @@ a
   &-item
     display: block
     border-radius: 50%
-    margin: 0 auto 5px
+    margin: 0 auto 71px
 
     .avatar
       img
@@ -345,7 +348,7 @@ a
   display: grid
   grid-template-columns: 1fr 1fr
   grid-template-rows: 1fr 1fr
-  padding-top: 46px
+  padding-top: 20px
 
   img
     height: 100%
@@ -392,7 +395,7 @@ a
     opacity: 1
     transform: translateY(2px)
 
-@media screen and ( min-width: 998px)
+@media screen and ( min-width: 768px)
   #toggle-nav
     + label
       display: none
@@ -432,7 +435,6 @@ a
     &.cta
       &-link
         &::after
-          width: 122px
           margin: -7px 0 0
 
       &-contact
@@ -445,9 +447,6 @@ a
           opacity: 1
           transition: all .5s
 
-  p
-    white-space: pre-line
-
   .cta
     &-text-box
       display: grid
@@ -457,14 +456,18 @@ a
 
       .banner
         grid-area: c-banner
+        height: 100%
 
         img
           display: block
+          width: 100%
+          height: 100%
+          object-fit: cover
 
       .text
         grid-area: c-text
         text-align: left
-        padding: 50px 40px 66px 163px
+        padding: 50px 40px 66px
 
         h2
           font-size: 40px
@@ -484,7 +487,7 @@ a
         grid-template-areas: "c-banner c-text"
 
         .text
-          padding: 50px 109px 66px
+          padding: 50px 40px 66px
 
     &-link
       margin-left: 11px
@@ -498,8 +501,10 @@ a
         align-items: center
 
       &-box
+        grid-template-rows: 1fr
+
         .text
-          padding: 0 150px
+          padding: 0 10% 40px
 
         h2
           font-size: 28px
@@ -527,11 +532,13 @@ a
     &-grid
       display: grid
       grid-row: 1fr
-      grid-template-columns: repeat(3, 1fr)
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
       gap: 30px
       padding: 18px
 
     &-item
+      margin: 0 auto 0
+
       .title
         padding-top: 29px
         font-size: 18px
@@ -541,6 +548,9 @@ a
   .gallery
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
     grid-template-rows: minmax(450px, 1fr)
+
+    img
+      width: 100%
 
   .footer-nav
     justify-content: center
@@ -556,9 +566,49 @@ a
   .hero
     h1
       white-space: normal
-      font-size: 60px
+      font-size: 50px
       letter-spacing: 7px
+      margin-top: 44px
+
+    .icon
+      padding-top: 160px
+
+@media screen and ( min-width: 1220px)
+  p
+    white-space: pre-line
+
+  .banner
+    &-text
+      &-box
+        grid-template-rows: repeat(3, 1fr)
+
+        .text
+          padding: 0 150px
+
+  .cta
+    &-text-box
+      .text
+        padding: 50px 40px 66px 163px
+
+      &:nth-of-type(2)
+        .text
+          padding: 50px 109px 66px
+
+  .hero
+    h1
+      font-size: 60px
       margin-top: -60px
 
     .icon
-      padding-top: 91px
+      padding-top: 91px 
+
+  .testimonial
+    &-grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 30px
+
+    &-container
+      padding-bottom: 146px
+
+  .gallery
+    padding-top: 0
