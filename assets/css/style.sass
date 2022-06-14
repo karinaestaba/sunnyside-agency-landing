@@ -40,8 +40,8 @@ body
 
   + label
     display: block
-    width: 30px
-    height: 30px
+    width: 23px
+    height: 20px
     z-index: 1
     cursor: pointer
     grid-area: c-toggle
@@ -50,7 +50,7 @@ body
     + label
       + .main-nav
         display: flex
-        gap: 20px
+        gap: 29px
         flex-direction: column
         width: 100%
         height: 100%
@@ -67,8 +67,9 @@ body
   grid-template-columns: 1fr
 
 p
-  line-height: 25px
-  font-size: 16px
+  line-height: 28px
+  font-size: 18px
+  padding-top: 7px
 
 img
   max-width: 100%
@@ -91,7 +92,7 @@ img
     grid-column: 1
     grid-row: 1/2
     z-index: 3
-    padding: 20px
+    padding: 25px
     text-align: left
 
     display: grid
@@ -115,7 +116,7 @@ img
       position: absolute
       display: block
       width: 30px
-      height: 30px
+      height: 34px
       right: 0
       top: -30px
       border-top: 0
@@ -126,23 +127,26 @@ img
     
     a
       color: $very_dark_grayish_blue
+      font-size: 19px
+      line-height: 27px
 
   &-footer
     grid-area: c-footer
     background-color: #90d4c5
     display: grid
     grid-template-areas: "c-logo" "c-nav" "c-social"
-    grid-template-rows: auto auto 1fr
-    padding: 40px 20px 60px
+    grid-template-rows: 1fr 1fr .5fr
+    padding: 57px 20px 85px
 
     .logo
       grid-area: c-logo
       display: block
       margin: 0 auto
-      padding: 30px
+      padding: 8px 30px 20px 19px
 
       img
         filter: brightness(0) saturate(80%) invert(26%) sepia(44%) saturate(292%) hue-rotate(116deg) brightness(154%) contrast(160%)
+        display: block
 
 .hero
   grid-column: 1
@@ -159,28 +163,39 @@ img
     font-size: 43px
     line-height: 50px
     text-transform: uppercase
-    font-weight: 700
     font-family: $font_family_secondary
-    letter-spacing: 1px
+    font-weight: 900
+    font-style: normal
+    letter-spacing: 4px
     white-space: pre-line
+    margin-top: -41px
 
   .banner
     grid-column: 1
     grid-row: 1/4
+    margin-top: -9px
 
     img
       height: 100%
       object-fit: cover
+  
+  .icon
+    grid-column: 1
+    grid-row: 2/4
+    padding-top: 108px
 
 .cta-text-box
   .text
-    padding: 50px 30px
+    padding: 50px 30px 66px
 
     h2
       margin-bottom: 20px
       color: $very_dark_desaturated_blue
       font-family: $font_family_secondary
       font-weight: 900
+      font-size: 33px
+      padding-top: 8px
+      line-height: 38px
 
 a
   text-decoration: none
@@ -192,11 +207,13 @@ a
       font-weight: 900
       text-transform: uppercase
       display: block
-      margin-top: 20px
+      margin-top: 40px
+      font-size: 16px
 
     &-contact
       background: #fad400
-      width: 124px
+      width: 140px
+      height: 57px
       display: block
       margin: 0 auto
       padding: 10px
@@ -206,8 +223,8 @@ a
       font-style: normal
       font-weight: 900
       text-transform: uppercase 
-      font-size: 14px
-      margin-top: 10px
+      font-size: 15px
+      line-height: 37px
 
 .banner
   &-text-box
@@ -232,6 +249,7 @@ a
       font-family: $font_family_secondary
       font-weight: 900
       margin-bottom: 20px
+      text-transform: capitalize
 
   &-green
     color: $dark_desaturated_cyan
@@ -241,27 +259,32 @@ a
 
 .testimonial
   &-container
-    padding: 40px
+    padding: 52px 40px 40px
     display: grid
     gap: 51px
 
     h2
       font-family: $font_family_secondary
-      letter-spacing: 3px
+      letter-spacing: 4px
       text-transform: uppercase
       color: $grayish_blue
-      font-size: 16px
+      font-size: 17px
+
+    p
+      padding-top: 2px
+      font-size: 17px
+      line-height: 31px
 
   &-item
     display: block
     border-radius: 50%
-    margin: 0 auto 30px
+    margin: 0 auto 5px
 
     .avatar
       img
         display: block
         border-radius: 50%
-        margin: 0 auto 30px
+        margin: 13px auto 30px
 
     .description
       color: #666769
@@ -270,44 +293,48 @@ a
       display: block
       font-family: $font_family_secondary
       font-weight: 900
-      margin-top: 20px
-      margin-bottom: 5px
+      margin-top: 34px
+      margin-bottom: 6px
       color: $very_dark_desaturated_blue
 
     .subtitle
-      font-size: 12px
-      line-height: 18px
+      font-size: 14px
+      line-height: 21px
 
 .gallery
   display: grid
   grid-template-columns: 1fr 1fr
   grid-template-rows: 1fr 1fr
+  padding-top: 46px
 
   img
     height: 100%
     object-fit: cover
+    display: block
 
 .footer-nav
   display: flex
   flex-wrap: wrap
   gap: 10px
-  justify-content: space-evenly
+  justify-content: space-around
   align-items: center
   grid-area: c-nav
-  padding: 0 0 95px
+  padding: 0 0 57px
+  gap: 18px
 
   a
     color: #4b8f80
+    font-size: 18px
 
 .social
   &-links
     display: flex
     flex-wrap: wrap
-    gap: 10px
+    gap: 17px
     justify-content: space-evenly
     align-items: center
     grid-area: c-social
-    padding: 0 80px
+    padding: 30px 76px 0 72px
     
   &-item
     color: $dark_desaturated_cyan
@@ -319,5 +346,5 @@ a
 
   100%
     opacity: 1
-    transform: translateY(0)
+    transform: translateY(2px)
     
