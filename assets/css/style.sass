@@ -64,7 +64,7 @@ body
         background: $white
         text-align: center
         padding: 40px
-        // animation: slideBottom 1s ease 0s 1 normal forwards
+        animation: slideBottom 1s ease 0s 1 normal forwards
 
 .content
   height: 100%
@@ -201,7 +201,7 @@ img
     grid-column: 1
     grid-row: 2/4
     padding-top: 108px
-    // animation: slideBottomDeep 1s ease 0s 1 normal forwards
+    animation: slideBottomDeep 1s ease 0s 1 normal forwards
 
 .cta-text-box
   .text
@@ -330,9 +330,9 @@ a
     border-radius: 50%
     margin: 0 auto 71px
 
-    // @for $i from 1 through 3
-    //   &:nth-of-type(n + #{$i})
-    //     animation: scaleUp ($i * .5s) ease 0s 1 normal forwards
+    @for $i from 1 through 3
+      &:nth-of-type(n + #{$i})
+        animation: scaleUp ($i * .5s) ease 0s 1 normal forwards
 
     .avatar
       img
