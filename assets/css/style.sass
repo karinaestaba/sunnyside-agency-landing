@@ -34,6 +34,7 @@ body
   font-size: $font_size
   line-height: 24px
   color: $dark_grayish_blue
+  
 
 #toggle-nav
   display: none
@@ -76,6 +77,7 @@ p
   line-height: 28px
   font-size: 18px
   padding-top: 7px
+  font-family: $font_family_primary
 
 img
   max-width: 100%
@@ -214,6 +216,9 @@ img
       padding-top: 8px
       line-height: 38px
 
+    p
+      color: #86858a
+
   &:first-child
     .cta-link
       &::after
@@ -239,9 +244,9 @@ a
       &::after
         content: ''
         display: block
-        height: 6px
-        width: 122px
-        margin: -7px auto 0
+        height: 8px
+        width: 123px
+        margin: -9px auto -5px
         border-radius: 6px
         background-color: #fedad4
 
@@ -318,6 +323,7 @@ a
       padding-top: 2px
       font-size: 17px
       line-height: 31px
+      color: #505358
 
   &-item
     display: block
@@ -327,7 +333,6 @@ a
     @for $i from 1 through 3
       &:nth-of-type(n + #{$i})
         animation: scaleUp ($i * .5s) ease 0s 1 normal forwards
-        // animation-delay: $i * 0.5s
 
     .avatar
       img
@@ -457,7 +462,8 @@ a
     &.cta
       &-link
         &::after
-          margin: -7px 0 0
+          margin-left: 0
+          margin-right: 0
 
       &-contact
         margin: 0
